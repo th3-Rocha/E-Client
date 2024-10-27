@@ -1,44 +1,22 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="E_Client._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
-
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
-    </main>
-
+      <main class="container my-5">
+          <div class="row">
+              <div class="col-lg-8 mx-auto">
+                  <div class="card border-0 shadow-lg">
+                      <div class="card-body p-5">
+                          <h1 class="card-title display-4 mb-4 text-primary">E-Client Manager</h1>
+                          <p class="lead text-muted mb-4">Gerencie seus clientes de forma eficiente e profissional com nossa plataforma intuitiva.</p>
+            
+                          <h2 class="h4 mb-3">O que você gostaria de fazer?</h2>
+                          <div class="d-grid gap-3 d-sm-flex justify-content-sm-start">
+                              <asp:Button ID="btnIncluirCliente" runat="server" CssClass="btn btn-primary btn-lg px-4 me-sm-3" Text="Novo Cliente" OnClick="btnPutClient_Click" />
+                              <asp:Button ID="btnEditarClientes" runat="server" CssClass="btn btn-outline-secondary btn-lg px-4" Text="Gerenciar Clientes" OnClick="btnListClient_Click" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
 </asp:Content>

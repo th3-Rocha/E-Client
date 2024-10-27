@@ -13,5 +13,13 @@ namespace E_Client
         {
 
         }
+        protected void btnPutClient_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateClientPage.aspx");
+        }
+        protected void btnListClient_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ListClientPage.aspx");
+        }
     }
 }
