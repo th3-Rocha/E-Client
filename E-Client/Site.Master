@@ -64,6 +64,23 @@
     .shadow-lg {
         box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
     }
+
+    .table-custom {
+    border-radius: 10px; 
+    overflow: hidden;
+    border: 1px solid #d3d3d3;
+    }
+
+    .table-custom th {
+        padding: 12px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .table-custom td {
+        padding: 10px;
+    }
+
 </style>
 </head>
 <body>
