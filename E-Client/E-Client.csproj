@@ -120,6 +120,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ListDelete.aspx" />
     <Content Include="CreateUpdate.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -188,6 +189,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ListDelete.aspx.cs">
+      <DependentUpon>ListDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListDelete.aspx.designer.cs">
+      <DependentUpon>ListDelete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateUpdate.aspx.cs">
       <DependentUpon>CreateUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
