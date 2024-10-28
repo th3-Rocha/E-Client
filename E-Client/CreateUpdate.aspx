@@ -2,13 +2,13 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    <main aria-labelledby="title">     
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <div class="card border-0 shadow-lg">
                             <div class="card-body p-5">
-                                <h1 class="card-title display-4 mb-4 text-primary">Criar Cliente</h1>
+                                <asp:Label ID="headerTitle" runat="server" Text="Criar Cliente" CssClass="card-title display-4 mb-4 text-primary" />
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
                       
                                 <div class="mb-3">
@@ -31,7 +31,7 @@
                                 </div>
                   
                                 <div class="mt-4">
-                                    <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary btn-lg" Text="Salvar Cliente" OnClick="btnClient_Save" />
+                                    <asp:Button ID="btnSave" runat="server" CssClass="btn btn-primary btn-lg" Text="Salvar Cliente" OnClick="btnClient_Save" />
                                 </div>
                             </div>
                         </div>

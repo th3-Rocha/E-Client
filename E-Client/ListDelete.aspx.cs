@@ -63,8 +63,7 @@ namespace E_Client
             else if (e.CommandName.CompareTo("Edit_CLI") == 0)
             {
 
-                string script = $"<script>alert('Cliente com ID {ClientId} Editado com sucesso!');</script>";
-                ClientScript.RegisterStartupScript(this.GetType(), "AlertScript", script);
+                Response.Redirect($"CreateUpdate.aspx?clientID={ClientId}");
             }
             
         }
@@ -90,6 +89,9 @@ namespace E_Client
             }
             ClientList();
         }
+
+
+
         protected void ModalSetup(string body)
         {
             ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "Popup", $"ShowPopup('{body}');", true);
