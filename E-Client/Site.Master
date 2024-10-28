@@ -83,7 +83,6 @@
 
    .table-custom tbody tr:last-child td {
      background-color: white !important;
-     color:white;
    }
  
 
