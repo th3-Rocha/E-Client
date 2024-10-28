@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,33 +13,84 @@ namespace E_Client
 {
     public partial class ListDelete : Page
     {
+        string connString = ConfigurationManager.ConnectionStrings["EClientDBConnection"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientList();
+            if (!IsPostBack)
+            {
+                ClientList();
+               
+            }
         }
         private void ClientList()
         {
-            string connString = ConfigurationManager.ConnectionStrings["EClientDBConnection"].ConnectionString;
-
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM CLIENTE";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
-
                 try
                 {
                     conn.Open();
                     da.Fill(dt);
-                    gvClientes.DataSource = dt;
-                    gvClientes.DataBind();
+                    CLIList.DataSource = dt;
+                    CLIList.DataBind();
                 }
                 catch (Exception ex)
                 {
                     ValidationSummary1.Visible = true;
-               
                 }
             }
+           
+        }
+        protected void CLIList_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
+
+            int rowIndex = Convert.ToInt32(e.CommandArgument);//pega o index pelo commandArgument do botão
+            int clienteId = Convert.ToInt32(CLIList.DataKeys[rowIndex].Value); //usa o index para saber o DataKeyName da linha em questão
+            if (e.CommandName.CompareTo("Delete_CLI") == 0)
+            {
+                string script = $"<script>alert('Cliente com ID {clienteId} Deletado com sucesso!');</script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "AlertScript", script);
+            }
+            else if (e.CommandName.CompareTo("Edit_CLI") == 0)
+            {
+
+                string script = $"<script>alert('Cliente com ID {clienteId} Editado com sucesso!');</script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "AlertScript", script);
+            }
+             
+            
+            
+        }
+
+        private void DeleteClient(string cliId)
+        {
+            string query = "DELETE FROM CLIENTE WHERE CLI_ID = @" + cliId;
+      
+            /* 
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        Response.Write("<script>alert('Cliente Deletado com sucesso!');</script>"); //abrir modal
+                    }
+                    catch (Exception ex)
+                    {
+                        // exibir erros
+                        Response.Write($"<script>alert('Erro ao Deletar cliente: {ex.Message}');</script>");//abrir modal
+                    }
+                }
+            }
+            */
+
         }
     }
 }
