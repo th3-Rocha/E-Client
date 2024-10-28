@@ -28,3 +28,10 @@ O projeto está organizado nas seguintes páginas principais:
 1. Clone o repositório:
    ```bash
    git clone https://github.com/th3-Rocha/E-Client.git
+
+
+### String de conexeção
+- O projeto já inclui um banco de dados **SQL Server** configurado. No entanto, caso queira configurar a sua própria conexão, edite a string de conexão no arquivo `Web.config` conforme o exemplo abaixo:
+<connectionStrings>
+    <add name="EClientDbConnection" connectionString="sua_string_de_conexao_aqui" providerName="System.Data.SqlClient" />
+</connectionStrings>
