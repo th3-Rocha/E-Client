@@ -30,7 +30,7 @@
                                     <label for="chkAtivo">Ativo</label>
                                 </div>
                   
-                            <div class="mt-4">
+                            <div class="mt-4 d-flex flex-row justify-content-between p-2 ">
                                 <asp:Button ID="btnSave" runat="server" CssClass="btn btn-primary btn-lg me-2 mt-2" Text="Salvar Cliente" OnClick="btnClient_Save" />
                                 <asp:Button ID="btnBack" runat="server" CssClass="btn btn-success btn-lg mt-2" Text="Voltar" OnClick="btnRouter_Back" CausesValidation="false" />
                             </div>

@@ -93,6 +93,7 @@ namespace E_Client
                         command.ExecuteNonQuery();
 
                         string message = string.IsNullOrEmpty(clientId) ? "Cliente criado com sucesso!" : "Cliente atualizado com sucesso!";
+                        ResetFields();
                         ModalSetup(message);
                      
                     }
@@ -102,6 +103,12 @@ namespace E_Client
                     }
                 }
             }
+        }
+        protected void ResetFields()
+        {
+            txtNome.Text = string.Empty;
+            txtDataNascimento.Text = string.Empty;
+            chkAtivo.Checked = false;
         }
         protected void btnRouter_Back(object sender, EventArgs e)
         {
