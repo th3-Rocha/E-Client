@@ -31,7 +31,4 @@ O projeto está organizado nas seguintes páginas principais:
 
 
 ### String de conexeção
-- O projeto já inclui um banco de dados **SQL Server** configurado. No entanto, caso queira configurar a sua própria conexão, edite a string de conexão no arquivo `Web.config` conforme o exemplo abaixo:
-<connectionStrings>
-    <add name="EClientDbConnection" connectionString="sua_string_de_conexao_aqui" providerName="System.Data.SqlClient" />
-</connectionStrings>
+- O projeto já inclui um banco de dados **SQL Server** configurado. No entanto, caso queira configurar a sua própria conexão, edite a string de conexão no arquivo `Web.config`
