@@ -23,24 +23,26 @@
                                 OnPageIndexChanging="CLIList_PageIndexChanging" 
                                 PagerStyle-CssClass="pagination"
                                 > 
-                                <Columns>
-                                    <asp:BoundField DataField="CLI_ID" HeaderText="Id do Cliente" />
-                                    <asp:BoundField DataField="CLI_NOME" HeaderText="Nome" />
-                                    <asp:BoundField DataField="CLI_DATANASCIMENTO" HeaderText="Data de Nascimento" DataFormatString="{0:dd/MM/yyyy}" />
-                                    <asp:TemplateField HeaderText="Ativo">
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="chkAtivo" runat="server" Checked='<%# Eval("CLI_ATIVO") %>' Enabled="false" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Ações">
-                                        <ItemTemplate>
-                                            <asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-outline-primary btn-sm" CommandName="Edit_CLI" CommandArgument='<%# Container.DataItemIndex %>'/>
-                                            <asp:Button ID="btnDelete" runat="server" Text="Deletar" CssClass="btn btn-outline-danger btn-sm"  CommandName="Delete_CLI" CommandArgument='<%# Container.DataItemIndex %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                    <Columns>
+                                        <asp:BoundField DataField="CLI_ID" HeaderText="Id do Cliente" />
+                                        <asp:BoundField DataField="CLI_NOME" HeaderText="Nome" />
+                                        <asp:BoundField DataField="CLI_DATANASCIMENTO" HeaderText="Data de Nascimento" DataFormatString="{0:dd/MM/yyyy}" />
+                                        <asp:TemplateField HeaderText="Ativo">
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="chkAtivo" runat="server" Checked='<%# Eval("CLI_ATIVO") %>' Enabled="false" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                             <asp:TemplateField HeaderText="Ações">
+                                                <ItemTemplate>
+                                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-outline-primary btn-sm"
+                                                                CommandName="Edit_CLI" CommandArgument='<%# Eval("CLI_ID") %>' />
+                                                    <asp:Button ID="btnDelete" runat="server" Text="Deletar" CssClass="btn btn-outline-danger btn-sm"
+                                                                CommandName="Delete_CLI" CommandArgument='<%# Eval("CLI_ID") %>' />
+                                                </ItemTemplate>
+                                          </asp:TemplateField>
 
-                                </Columns>
-                            </asp:GridView>
+                                    </Columns>
+                                 </asp:GridView>
                         </div>
                     </div>
                   </div>

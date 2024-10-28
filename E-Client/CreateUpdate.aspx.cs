@@ -94,6 +94,7 @@ namespace E_Client
 
                         string message = string.IsNullOrEmpty(clientId) ? "Cliente criado com sucesso!" : "Cliente atualizado com sucesso!";
                         ModalSetup(message);
+                     
                     }
                     catch (Exception ex)
                     {
@@ -102,7 +103,19 @@ namespace E_Client
                 }
             }
         }
+        protected void btnRouter_Back(object sender, EventArgs e)
+        {
+            string clientId = Request.QueryString["clientID"];
+            if (!string.IsNullOrEmpty(clientId))
+            {
+                Response.Redirect($"ListDelete.aspx");
+            }
+            else
+            {
+                Response.Redirect($"/");
 
+            }
+        }
         protected void ModalSetup(string body)
         {
             ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "Popup", $"ShowPopup('{body}');", true);

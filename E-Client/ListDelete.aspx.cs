@@ -51,21 +51,17 @@ namespace E_Client
 
         protected void CLIList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+            // Use the client ID directly from CommandArgument
+            string ClientId = e.CommandArgument.ToString();
 
-            int rowIndex = Convert.ToInt32(e.CommandArgument);//pega o index pelo commandArgument do botão
-            string ClientId = Convert.ToString(CLIList.DataKeys[rowIndex].Value); //usa o index para saber o DataKeyName da linha em questão
-            if (e.CommandName.CompareTo("Delete_CLI") == 0)
+            if (e.CommandName == "Delete_CLI")
             {
                 DeleteClient(ClientId);
-             
             }
-            else if (e.CommandName.CompareTo("Edit_CLI") == 0)
+            else if (e.CommandName == "Edit_CLI")
             {
-
                 Response.Redirect($"CreateUpdate.aspx?clientID={ClientId}");
             }
-            
         }
 
         private void DeleteClient(string cliId)
