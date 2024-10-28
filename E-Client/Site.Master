@@ -118,6 +118,31 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </main>
+
+
+        <!-- Modal Behaviour -->
+           <div id="MyPopup" class="modal fade" tabindex="-1" role="dialog">
+               <div class="modal-dialog modal-dialog-centered">
+                   <div class="modal-content">
+                       <div class="modal-body text-center">
+                           <p id="modalMessage" class="text-primary fs-5 fw-bold"></p> 
+                       </div>
+                       <div class="modal-footer justify-content-center">
+                           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+          <script type="text/javascript">
+              function ShowPopup(body) {
+                  document.getElementById("modalMessage").innerHTML = body;
+                  const modal = new bootstrap.Modal(document.getElementById('MyPopup'), { keyboard: true });
+                  modal.show();
+              }
+          </script>
+          <!-- Modal Behaviour -->
+
+
              <footer class="footer text-muted">
                  <div class="container">
                      <div class="row">
